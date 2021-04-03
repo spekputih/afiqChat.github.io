@@ -6,6 +6,7 @@ const connectionString = process.env.CONNECTION_STRING
 
 mongodb.connect(connectionString, {useNewUrlParser: true, useUnifiedTopology: true}, function(err, client){
 	module.exports = client
+	console.log(client)
 	const app = require("./app")
 	app.listen(process.env.PORT, () => console.log("the app is established on port 3000"))
 })
